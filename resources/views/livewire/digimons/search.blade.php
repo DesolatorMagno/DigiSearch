@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label for="select">Select</label>
                 <div>
-                  <select id="digiSelect" name="select" class="custom-select select2" wire:model='digimon' data-name="digimon">
+                  <select id="digiSelect" name="select" class="custom-select select" wire:model='digimon' data-name="digimon">
                     @foreach ($digimons as $item)
                         <option value="{{ $item['name'] }}">{{ $item['name'] }}</option>
                     @endforeach
@@ -36,6 +36,7 @@
             <button name="submit" type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
+    @section('script')
     <script>
         $(document).ready(function() {
             $('#lvlSelect').select2();
@@ -45,4 +46,5 @@
             });
         });
     </script>
+    @endsection
 </form>
