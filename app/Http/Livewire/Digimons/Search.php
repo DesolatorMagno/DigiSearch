@@ -33,6 +33,7 @@ class Search extends Component
         $request        = Http::get($this->baseUrl . $value);
         $this->digimons = new \Illuminate\Support\Collection($request->json());
         $this->avatar = $this->digimons->first()['img'];
+        $this->emit('reApplyS2');
     }
 
     public function updatingDigimon($value)

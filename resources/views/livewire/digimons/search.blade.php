@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-6">
             <div class="form-group">
-                <label for="select">Select Lvl - {{ $lvl }}</label>
+                <label for="lvlSelect">Select Lvl</label>
                 <div name="divLvl" wire:ignore>
-                  <select id="lvlSelect" name="select" class="custom-select select2" data-name="lvl">
+                  <select id="lvlSelect" name="lvlSelect" class="custom-select select2" data-name="lvl">
                     <option value="">Seleccione Lvl</option>
                       @foreach ($lvls as $item)
                       <option value="{{ $item }}">{{ $item }}</option>
@@ -15,9 +15,9 @@
         </div>
         <div class="col-6">
             <div class="form-group">
-                <label for="select">Select</label>
+                <label for="digiSelect">Select Digimon</label>
                 <div>
-                  <select id="digiSelect" name="select" class="custom-select select" wire:model='digimon' data-name="digimon">
+                  <select id="digiSelect" name="digiSelect" class="custom-select" wire:model='digimon' data-name="digimon">
                     @foreach ($digimons as $item)
                         <option value="{{ $item['name'] }}">{{ $item['name'] }}</option>
                     @endforeach
@@ -40,10 +40,14 @@
     <script>
         $(document).ready(function() {
             $('#lvlSelect').select2();
+            $('#digiSelect').select2();
             $('.select2').on('change', function (e) {
                 let data = $(this).select2("val")
                 @this.set($(this).data('name'), data);
             });
+            Livewire.on('reApplyS2', values  => {
+                $('#digiSelect').select2();
+            })
         });
     </script>
     @endsection
