@@ -3,7 +3,7 @@
         <div class="col-6">
             <div class="form-group">
                 <label for="select">Select Lvl - {{ $lvl }}</label>
-                <div>
+                <div name="divLvl" wire:ignore>
                   <select id="lvlSelect" name="select" class="custom-select select2" data-name="lvl">
                     <option value="">Seleccione Lvl</option>
                       @foreach ($lvls as $item)
