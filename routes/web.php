@@ -19,4 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/digimon-simple', DigimonSimpleSearchController::class)->name('search.simple');
-Route::get('/digimon', DigimonSimpleSearchController::class)->name('search');
+Route::get('/digisearch', DigimonSimpleSearchController::class)->name('search');
