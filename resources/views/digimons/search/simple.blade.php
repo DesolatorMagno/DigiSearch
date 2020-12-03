@@ -9,4 +9,6 @@
             </div>
         </div>
     </x-slot>
+    <x-layouts.partials.addLivewire/>
+    <x-layouts.partials.addSelect2/>
 </x-app>
