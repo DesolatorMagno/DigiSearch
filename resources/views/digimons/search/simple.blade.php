@@ -1,4 +1,4 @@
-<x-app title='Busqueda sencilla'>
+<x-layouts.app title='Busqueda sencilla'>
     <x-slot name="body">
         <div class="d-flex justify-content-center">
             <div class="card col-6">

@@ -36,7 +36,7 @@
             <button name="submit" type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
-    @section('script')
+    @push('scripts')
     <script>
         $(document).ready(function() {
             $('#lvlSelect').select2();
@@ -50,5 +50,5 @@
             })
         });
     </script>
-    @endsection
+    @endpush
 </form>
